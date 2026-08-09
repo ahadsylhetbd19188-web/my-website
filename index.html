@@ -4,224 +4,319 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ahad Shop - Online Clothing Store</title>
+<title>Ahad Shop - Online Shopping</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
-body {
-    background: #f5f6fa;
-    color: #222;
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    color:#222;
 }
 
 /* NAVBAR */
-nav {
-    background: #111827;
-    padding: 18px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+
+nav{
+    background:#111827;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-.logo {
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
+.logo{
+    color:white;
+    font-size:26px;
+    font-weight:bold;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: 16px;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:22px;
+    font-size:16px;
 }
 
-nav a:hover {
-    color: #38bdf8;
+nav a:hover{
+    color:#38bdf8;
 }
 
 /* HERO */
-.hero {
-    min-height: 430px;
-    background: linear-gradient(135deg, #1d4ed8, #2563eb, #38bdf8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 40px 20px;
+
+.hero{
+    min-height:430px;
+    background:linear-gradient(135deg,#1d4ed8,#2563eb,#06b6d4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:40px 20px;
 }
 
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 15px;
+.hero h1{
+    font-size:50px;
+    margin-bottom:15px;
 }
 
-.hero p {
-    font-size: 21px;
-    margin-bottom: 30px;
+.hero p{
+    font-size:21px;
+    margin-bottom:30px;
 }
 
-.order-btn {
-    background: white;
-    color: #1d4ed8;
-    padding: 14px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-}
-
-.order-btn:hover {
-    background: #111827;
-    color: white;
+.hero-btn{
+    background:white;
+    color:#1d4ed8;
+    padding:14px 32px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
 }
 
 /* SECTION */
-section {
-    padding: 60px 8%;
+
+section{
+    padding:60px 7%;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 40px;
+.section-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:40px;
 }
 
 /* PRODUCTS */
-.products {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
 }
 
-.product {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.10);
-    text-align: center;
-    padding-bottom: 20px;
-    transition: 0.3s;
+.product{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.10);
+    text-align:center;
+    padding-bottom:22px;
 }
 
-.product:hover {
-    transform: translateY(-8px);
+.product-img{
+    height:240px;
+    background:linear-gradient(135deg,#dbeafe,#e0f2fe);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#64748b;
+    font-size:20px;
+    font-weight:bold;
 }
 
-.product img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
+.product-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-.product h3 {
-    margin: 18px 5px 10px;
-    font-size: 21px;
+.product h3{
+    margin:18px 5px 8px;
+    font-size:21px;
 }
 
-.price {
-    color: #e11d48;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 15px;
+.price{
+    color:#e11d48;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:16px;
 }
 
-.buy-btn {
-    display: inline-block;
-    background: #2563eb;
-    color: white;
-    text-decoration: none;
-    padding: 11px 25px;
-    border-radius: 8px;
-    font-weight: bold;
+.buy-btn{
+    border:0;
+    background:#2563eb;
+    color:white;
+    padding:12px 28px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
 }
 
-.buy-btn:hover {
-    background: #111827;
+.buy-btn:hover{
+    background:#111827;
+}
+
+/* ORDER */
+
+.order-section{
+    background:white;
+}
+
+.order-box{
+    max-width:700px;
+    margin:auto;
+    background:#f8fafc;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.form-group textarea{
+    height:100px;
+    resize:vertical;
+}
+
+.order-summary{
+    background:#e0f2fe;
+    padding:18px;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+.total{
+    font-size:23px;
+    font-weight:bold;
+    color:#dc2626;
+}
+
+.whatsapp-btn{
+    width:100%;
+    background:#16a34a;
+    color:white;
+    border:0;
+    padding:15px;
+    border-radius:9px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.whatsapp-btn:hover{
+    background:#15803d;
 }
 
 /* ABOUT */
-.about {
-    background: white;
-    text-align: center;
+
+.about{
+    background:white;
+    text-align:center;
 }
 
-.about p {
-    max-width: 800px;
-    margin: auto;
-    font-size: 18px;
-    line-height: 1.8;
+.about p{
+    max-width:800px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.8;
 }
 
 /* CONTACT */
-.contact {
-    text-align: center;
-    background: #eef2ff;
+
+.contact{
+    background:#eef2ff;
+    text-align:center;
 }
 
-.contact p {
-    margin: 12px 0;
-    font-size: 18px;
+.contact p{
+    margin:12px 0;
+    font-size:18px;
 }
 
 /* FOOTER */
-footer {
-    background: #111827;
-    color: white;
-    text-align: center;
-    padding: 25px;
+
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px;
 }
 
 /* MOBILE */
-@media(max-width: 900px) {
-    .products {
-        grid-template-columns: repeat(2, 1fr);
+
+@media(max-width:900px){
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
     }
+
 }
 
-@media(max-width: 600px) {
+@media(max-width:600px){
 
-    nav {
-        flex-direction: column;
-        gap: 15px;
+    nav{
+        flex-direction:column;
+        gap:15px;
     }
 
-    nav a {
-        margin: 0 8px;
-        font-size: 14px;
+    nav a{
+        margin:0 7px;
+        font-size:14px;
     }
 
-    .hero h1 {
-        font-size: 35px;
+    .hero h1{
+        font-size:36px;
     }
 
-    .hero p {
-        font-size: 17px;
+    .hero p{
+        font-size:17px;
     }
 
-    .products {
-        grid-template-columns: 1fr;
+    .products{
+        grid-template-columns:1fr;
     }
 
-    section {
-        padding: 45px 5%;
+    section{
+        padding:45px 5%;
     }
+
+    .order-box{
+        padding:20px;
+    }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- NAVBAR -->
+
 <nav>
 
 <div class="logo">
@@ -229,30 +324,30 @@ Ahad Shop
 </div>
 
 <div>
+
 <a href="#home">Home</a>
 <a href="#products">Products</a>
+<a href="#order">Order</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
+
 </div>
 
 </nav>
 
 
-<!-- HOME -->
+<!-- HERO -->
+
 <section class="hero" id="home">
 
 <div>
 
 <h1>Welcome To Ahad Shop</h1>
 
-<p>Best Quality Clothing Collection</p>
+<p>Quality Products At Affordable Prices</p>
 
-<a class="order-btn"
-href="https://wa.me/8801624694415?text=Hello%20Ahad%20Shop%2C%20I%20want%20to%20place%20an%20order."
-target="_blank">
-
-Order Now
-
+<a href="#products" class="hero-btn">
+Shop Now
 </a>
 
 </div>
@@ -261,6 +356,484 @@ Order Now
 
 
 <!-- PRODUCTS -->
+
 <section id="products">
 
-<h2 class="section-title">…
+<h2 class="section-title">
+Our Products
+</h2>
+
+<div class="products">
+
+
+<!-- PRODUCT 1 -->
+
+<div class="product">
+
+<div class="product-img">
+Product Image
+</div>
+
+<h3>Men T-Shirt</h3>
+
+<div class="price">
+৳650
+</div>
+
+<button class="buy-btn"
+onclick="selectProduct('Men T-Shirt',650)">
+Buy Now
+</button>
+
+</div>
+
+
+<!-- PRODUCT 2 -->
+
+<div class="product">
+
+<div class="product-img">
+Product Image
+</div>
+
+<h3>Women's Dress</h3>
+
+<div class="price">
+৳1200
+</div>
+
+<button class="buy-btn"
+onclick="selectProduct('Women’s Dress',1200)">
+Buy Now
+</button>
+
+</div>
+
+
+<!-- PRODUCT 3 -->
+
+<div class="product">
+
+<div class="product-img">
+Product Image
+</div>
+
+<h3>Kids Collection</h3>
+
+<div class="price">
+৳850
+</div>
+
+<button class="buy-btn"
+onclick="selectProduct('Kids Collection',850)">
+Buy Now
+</button>
+
+</div>
+
+
+<!-- PRODUCT 4 -->
+
+<div class="product">
+
+<div class="product-img">
+Product Image
+</div>
+
+<h3>Premium Shirt</h3>
+
+<div class="price">
+৳990
+</div>
+
+<button class="buy-btn"
+onclick="selectProduct('Premium Shirt',990)">
+Buy Now
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ORDER FORM -->
+
+<section class="order-section" id="order">
+
+<h2 class="section-title">
+Place Your Order
+</h2>
+
+
+<div class="order-box">
+
+
+<div class="form-group">
+
+<label>
+Select Product
+</label>
+
+<select id="product">
+
+<option value="Men T-Shirt" data-price="650">
+Men T-Shirt - ৳650
+</option>
+
+<option value="Women's Dress" data-price="1200">
+Women's Dress - ৳1200
+</option>
+
+<option value="Kids Collection" data-price="850">
+Kids Collection - ৳850
+</option>
+
+<option value="Premium Shirt" data-price="990">
+Premium Shirt - ৳990
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Size
+</label>
+
+<select id="size">
+
+<option>Small (S)</option>
+<option>Medium (M)</option>
+<option>Large (L)</option>
+<option>Extra Large (XL)</option>
+<option>XXL</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Color
+</label>
+
+<select id="color">
+
+<option>Black</option>
+<option>White</option>
+<option>Blue</option>
+<option>Red</option>
+<option>Green</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Quantity
+</label>
+
+<input
+type="number"
+id="quantity"
+value="1"
+min="1"
+oninput="calculateTotal()">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Customer Name
+</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter your name">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Phone Number
+</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="01XXXXXXXXX">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Delivery Address
+</label>
+
+<textarea
+id="address"
+placeholder="Enter your complete delivery address"></textarea>
+
+</div>
+
+
+<div class="order-summary">
+
+<p>
+Product:
+<strong id="showProduct">
+Men T-Shirt
+</strong>
+</p>
+
+<p>
+Total:
+<span class="total" id="total">
+৳650
+</span>
+</p>
+
+</div>
+
+
+<button
+class="whatsapp-btn"
+onclick="sendOrder()">
+
+📲 Place Order on WhatsApp
+
+</button>
+
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<h2 class="section-title">
+About Ahad Shop
+</h2>
+
+<p>
+
+Welcome to Ahad Shop.
+
+We provide quality clothing and other products
+at affordable prices.
+
+Our goal is to provide quality products,
+reasonable prices and excellent customer service.
+
+</p>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">
+Contact Us
+</h2>
+
+<p>📱 WhatsApp: 01624694415</p>
+
+<p>📧 Email: abdulahad.aa231@gmail.com</p>
+
+<p>📍 Bangladesh</p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Ahad Shop. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<script>
+
+/* SELECT PRODUCT */
+
+function selectProduct(name,price){
+
+    document.getElementById("product").value = name;
+
+    document.getElementById("showProduct").innerText = name;
+
+    calculateTotal();
+
+    document.getElementById("order").scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* CALCULATE TOTAL */
+
+function calculateTotal(){
+
+    let product =
+    document.getElementById("product");
+
+    let price =
+    product.options[product.selectedIndex]
+    .getAttribute("data-price");
+
+    let quantity =
+    document.getElementById("quantity").value;
+
+    let total =
+    Number(price) * Number(quantity);
+
+    document.getElementById("showProduct").innerText =
+    product.value;
+
+    document.getElementById("total").innerText =
+    "৳" + total;
+
+}
+
+
+/* PRODUCT CHANGE */
+
+document.getElementById("product")
+.addEventListener("change",calculateTotal);
+
+
+/* SEND ORDER */
+
+function sendOrder(){
+
+    let product =
+    document.getElementById("product").value;
+
+    let productSelect =
+    document.getElementById("product");
+
+    let price =
+    productSelect.options[
+        productSelect.selectedIndex
+    ].getAttribute("data-price");
+
+    let size =
+    document.getElementById("size").value;
+
+    let color =
+    document.getElementById("color").value;
+
+    let quantity =
+    document.getElementById("quantity").value;
+
+    let name =
+    document.getElementById("name").value.trim();
+
+    let phone =
+    document.getElementById("phone").value.trim();
+
+    let address =
+    document.getElementById("address").value.trim();
+
+
+    /* CHECK CUSTOMER INFORMATION */
+
+    if(name === ""){
+
+        alert("Please enter your name.");
+
+        return;
+    }
+
+
+    if(phone === ""){
+
+        alert("Please enter your phone number.");
+
+        return;
+    }
+
+
+    if(address === ""){
+
+        alert("Please enter your delivery address.");
+
+        return;
+    }
+
+
+    let total =
+    Number(price) * Number(quantity);
+
+
+    let message =
+`Hello Ahad Shop,
+
+I want to place an order.
+
+Product: ${product}
+Price: ৳${price}
+Size: ${size}
+Color: ${color}
+Quantity: ${quantity}
+
+Total Price: ৳${total}
+
+Customer Name: ${name}
+Customer Phone: ${phone}
+
+Delivery Address:
+${address}
+
+Please confirm my order. Thank you.`;
+
+
+    let whatsappNumber =
+    "8801624694415";
+
+
+    let whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+    window.open(whatsappURL,"_blank");
+
+}
+
+</script>
+
+
+</body>
+</html>
