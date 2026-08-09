@@ -3,263 +3,324 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ahad Shop - Online Shopping</title>
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;}
 
 body{
-background:#f5f7fb;
-color:#222;
+    background:#f5f7fb;
+    color:#222;
 }
 
+/* NAVBAR */
 nav{
-background:#111827;
-padding:18px 7%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:1000;
+    background:#111827;
+    padding:15px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-.logo{
-color:white;
-font-size:26px;
-font-weight:bold;
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-circle{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#2563eb;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.logo-name{
+    color:white;
+    font-size:25px;
+    font-weight:bold;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin-left:22px;
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
 }
 
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* HERO */
 .hero{
-min-height:430px;
-background:linear-gradient(135deg,#1d4ed8,#2563eb,#06b6d4);
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-padding:40px 20px;
+    min-height:430px;
+    background:linear-gradient(135deg,#1d4ed8,#2563eb,#06b6d4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:40px 20px;
 }
 
 .hero h1{
-font-size:50px;
-margin-bottom:15px;
+    font-size:50px;
+    margin-bottom:15px;
 }
 
 .hero p{
-font-size:21px;
-margin-bottom:30px;
+    font-size:21px;
+    margin-bottom:30px;
 }
 
 .hero-btn{
-background:white;
-color:#1d4ed8;
-padding:14px 32px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
+    background:white;
+    color:#1d4ed8;
+    padding:14px 32px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
+/* SECTIONS */
 section{
-padding:60px 7%;
+    padding:60px 7%;
 }
 
 .section-title{
-text-align:center;
-font-size:32px;
-margin-bottom:40px;
+    text-align:center;
+    font-size:32px;
+    margin-bottom:40px;
 }
 
+/* PRODUCTS */
 .products{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
 }
 
 .product{
-background:white;
-border-radius:16px;
-overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,.10);
-text-align:center;
-padding-bottom:22px;
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.10);
+    text-align:center;
+    padding-bottom:22px;
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-7px);
 }
 
 .product-img{
-height:240px;
-background:linear-gradient(135deg,#dbeafe,#e0f2fe);
-display:flex;
-justify-content:center;
-align-items:center;
-color:#64748b;
-font-size:20px;
-font-weight:bold;
+    height:240px;
+    background:linear-gradient(135deg,#dbeafe,#e0f2fe);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#64748b;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.product-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 .product h3{
-margin:18px 5px 8px;
+    margin:18px 5px 8px;
 }
 
 .price{
-color:#e11d48;
-font-size:22px;
-font-weight:bold;
-margin-bottom:16px;
+    color:#e11d48;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:16px;
 }
 
 .buy-btn{
-border:0;
-background:#2563eb;
-color:white;
-padding:12px 28px;
-border-radius:8px;
-cursor:pointer;
-font-size:16px;
-font-weight:bold;
+    border:0;
+    background:#2563eb;
+    color:white;
+    padding:12px 28px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
 }
 
+.buy-btn:hover{
+    background:#111827;
+}
+
+/* ORDER */
 .order-section{
-background:white;
+    background:white;
 }
 
 .order-box{
-max-width:700px;
-margin:auto;
-background:#f8fafc;
-padding:30px;
-border-radius:18px;
-box-shadow:0 5px 25px rgba(0,0,0,.08);
+    max-width:700px;
+    margin:auto;
+    background:#f8fafc;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
 }
 
 .form-group{
-margin-bottom:18px;
+    margin-bottom:18px;
 }
 
 .form-group label{
-display:block;
-font-weight:bold;
-margin-bottom:7px;
+    display:block;
+    font-weight:bold;
+    margin-bottom:7px;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea{
-width:100%;
-padding:13px;
-border:1px solid #cbd5e1;
-border-radius:8px;
-font-size:16px;
+    width:100%;
+    padding:13px;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+    font-size:16px;
 }
 
 .form-group textarea{
-height:100px;
-resize:vertical;
+    height:100px;
+    resize:vertical;
 }
 
 .summary{
-background:#e0f2fe;
-padding:20px;
-border-radius:10px;
-margin:20px 0;
-line-height:2;
+    background:#e0f2fe;
+    padding:20px;
+    border-radius:10px;
+    margin:20px 0;
+    line-height:2;
 }
 
 .total{
-font-size:24px;
-font-weight:bold;
-color:#dc2626;
+    font-size:24px;
+    font-weight:bold;
+    color:#dc2626;
 }
 
 .whatsapp-btn{
-width:100%;
-background:#16a34a;
-color:white;
-border:0;
-padding:16px;
-border-radius:9px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
+    width:100%;
+    background:#16a34a;
+    color:white;
+    border:0;
+    padding:16px;
+    border-radius:9px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
+/* ABOUT */
 .about{
-background:white;
-text-align:center;
+    background:white;
+    text-align:center;
 }
 
 .about p{
-max-width:800px;
-margin:auto;
-font-size:18px;
-line-height:1.8;
+    max-width:800px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.8;
 }
 
+/* CONTACT */
 .contact{
-background:#eef2ff;
-text-align:center;
+    background:#eef2ff;
+    text-align:center;
 }
 
 .contact p{
-margin:12px 0;
-font-size:18px;
+    margin:12px 0;
+    font-size:18px;
 }
 
+/* FOOTER */
 footer{
-background:#111827;
-color:white;
-text-align:center;
-padding:25px;
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px;
 }
 
+/* MOBILE */
 @media(max-width:900px){
-.products{
-grid-template-columns:repeat(2,1fr);
-}
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
 @media(max-width:600px){
-nav{
-flex-direction:column;
-gap:15px;
-}
 
-nav a{
-margin:0 7px;
-font-size:14px;
-}
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
 
-.hero h1{
-font-size:36px;
-}
+    nav a{
+        margin:0 6px;
+        font-size:14px;
+    }
 
-.products{
-grid-template-columns:1fr;
-}
+    .hero h1{
+        font-size:36px;
+    }
 
-section{
-padding:45px 5%;
-}
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:45px 5%;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
-<div class="logo">Ahad Shop</div>
+
+<div class="logo-area">
+
+<div class="logo-circle">
+AS
+</div>
+
+<div class="logo-name">
+Ahad Shop
+</div>
+
+</div>
 
 <div>
 <a href="#home">Home</a>
@@ -268,72 +329,150 @@ padding:45px 5%;
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
 </div>
+
 </nav>
 
 
+<!-- HERO -->
 <section class="hero" id="home">
+
 <div>
+
 <h1>Welcome To Ahad Shop</h1>
+
 <p>Quality Products At Affordable Prices</p>
-<a href="#products" class="hero-btn">Shop Now</a>
+
+<a href="#products" class="hero-btn">
+Shop Now
+</a>
+
 </div>
+
 </section>
 
 
+<!-- PRODUCTS -->
 <section id="products">
 
-<h2 class="section-title">Our Products</h2>
+<h2 class="section-title">
+Our Products
+</h2>
 
 <div class="products">
 
+
+<!-- PRODUCT 1 -->
 <div class="product">
-<div class="product-img">Product Image</div>
+
+<div class="product-img">
+
+<!-- পরে এখানে ছবি বসাবেন -->
+
+<span>Men T-Shirt Image</span>
+
+</div>
+
 <h3>Men T-Shirt</h3>
-<div class="price">৳650</div>
-<button class="buy-btn" onclick="selectProduct('Men T-Shirt',650)">
-Buy Now
-</button>
+
+<div class="price">
+৳650
 </div>
 
+<button class="buy-btn"
+onclick="selectProduct('Men T-Shirt',650)">
+Buy Now
+</button>
+
+</div>
+
+
+<!-- PRODUCT 2 -->
 <div class="product">
-<div class="product-img">Product Image</div>
+
+<div class="product-img">
+
+<span>Women's Dress Image</span>
+
+</div>
+
 <h3>Women's Dress</h3>
-<div class="price">৳1200</div>
-<button class="buy-btn" onclick="selectProduct('Women's Dress',1200)">
-Buy Now
-</button>
+
+<div class="price">
+৳1200
 </div>
 
+<button class="buy-btn"
+onclick="selectProduct('Women's Dress',1200)">
+Buy Now
+</button>
+
+</div>
+
+
+<!-- PRODUCT 3 -->
 <div class="product">
-<div class="product-img">Product Image</div>
+
+<div class="product-img">
+
+<span>Kids Collection Image</span>
+
+</div>
+
 <h3>Kids Collection</h3>
-<div class="price">৳850</div>
-<button class="buy-btn" onclick="selectProduct('Kids Collection',850)">
-Buy Now
-</button>
+
+<div class="price">
+৳850
 </div>
 
+<button class="buy-btn"
+onclick="selectProduct('Kids Collection',850)">
+Buy Now
+</button>
+
+</div>
+
+
+<!-- PRODUCT 4 -->
 <div class="product">
-<div class="product-img">Product Image</div>
-<h3>Premium Shirt</h3>
-<div class="price">৳990</div>
-<button class="buy-btn" onclick="selectProduct('Premium Shirt',990)">
-Buy Now
-</button>
-</div>
+
+<div class="product-img">
+
+<span>Premium Shirt Image</span>
 
 </div>
+
+<h3>Premium Shirt</h3>
+
+<div class="price">
+৳990
+</div>
+
+<button class="buy-btn"
+onclick="selectProduct('Premium Shirt',990)">
+Buy Now
+</button>
+
+</div>
+
+
+</div>
+
 </section>
 
 
+<!-- ORDER -->
 <section class="order-section" id="order">
 
-<h2 class="section-title">Place Your Order</h2>
+<h2 class="section-title">
+Place Your Order
+</h2>
 
 <div class="order-box">
 
+
 <div class="form-group">
-<label>Product</label>
+
+<label>Select Product</label>
 
 <select id="product" onchange="calculateTotal()">
 
@@ -354,66 +493,87 @@ Premium Shirt - ৳990
 </option>
 
 </select>
+
 </div>
 
 
 <div class="form-group">
+
 <label>Size</label>
 
 <select id="size">
+
 <option>Small (S)</option>
 <option>Medium (M)</option>
 <option>Large (L)</option>
 <option>Extra Large (XL)</option>
 <option>XXL</option>
+
 </select>
+
 </div>
 
 
 <div class="form-group">
+
 <label>Color</label>
 
 <select id="color">
+
 <option>Black</option>
 <option>White</option>
 <option>Blue</option>
 <option>Red</option>
 <option>Green</option>
 <option>Other</option>
+
 </select>
+
 </div>
 
 
 <div class="form-group">
+
 <label>Quantity</label>
 
-<input type="number" id="quantity"
-value="1" min="1"
+<input type="number"
+id="quantity"
+value="1"
+min="1"
 oninput="calculateTotal()">
+
 </div>
 
 
 <div class="form-group">
+
 <label>Customer Name</label>
 
-<input type="text" id="name"
+<input type="text"
+id="name"
 placeholder="Enter your name">
+
 </div>
 
 
 <div class="form-group">
+
 <label>Phone Number</label>
 
-<input type="tel" id="phone"
+<input type="tel"
+id="phone"
 placeholder="01XXXXXXXXX">
+
 </div>
 
 
 <div class="form-group">
+
 <label>Delivery Address</label>
 
 <textarea id="address"
 placeholder="Enter your complete delivery address"></textarea>
+
 </div>
 
 
@@ -421,7 +581,8 @@ placeholder="Enter your complete delivery address"></textarea>
 
 <label>Delivery Area</label>
 
-<select id="delivery" onchange="calculateTotal()">
+<select id="delivery"
+onchange="calculateTotal()">
 
 <option value="80">
 Inside Sylhet - ৳80
@@ -445,6 +606,7 @@ Outside Sylhet - ৳120
 <option>Cash on Delivery</option>
 <option>bKash</option>
 <option>Nagad</option>
+
 </select>
 
 </div>
@@ -452,20 +614,26 @@ Outside Sylhet - ৳120
 
 <div class="summary">
 
-<p>Product:
-<strong id="showProduct">Men T-Shirt</strong>
+<p>
+Product:
+<strong id="showProduct">
+Men T-Shirt
+</strong>
 </p>
 
-<p>Product Price:
+<p>
+Product Price:
 ৳<span id="productPrice">650</span>
 </p>
 
-<p>Delivery Charge:
+<p>
+Delivery Charge:
 ৳<span id="deliveryPrice">80</span>
 </p>
 
 <p class="total">
-Total: ৳<span id="total">730</span>
+Total:
+৳<span id="total">730</span>
 </p>
 
 </div>
@@ -479,36 +647,55 @@ onclick="sendOrder()">
 </button>
 
 </div>
+
 </section>
 
 
+<!-- ABOUT -->
 <section class="about" id="about">
 
-<h2 class="section-title">About Ahad Shop</h2>
+<h2 class="section-title">
+About Ahad Shop
+</h2>
 
 <p>
-Welcome to Ahad Shop. We provide quality clothing
-and other products at affordable prices.
+
+Welcome to Ahad Shop.
+
+We provide quality clothing and other products
+at affordable prices.
+
 Our goal is to provide quality products,
 reasonable prices and excellent customer service.
+
 </p>
 
 </section>
 
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
 
-<h2 class="section-title">Contact Us</h2>
+<h2 class="section-title">
+Contact Us
+</h2>
 
 <p>📱 WhatsApp: 01624694415</p>
+
 <p>📧 Email: abdulahad.aa231@gmail.com</p>
+
 <p>📍 Bangladesh</p>
 
 </section>
 
 
+<!-- FOOTER -->
 <footer>
-<p>© 2026 Ahad Shop. All Rights Reserved.</p>
+
+<p>
+© 2026 Ahad Shop. All Rights Reserved.
+</p>
+
 </footer>
 
 
@@ -516,113 +703,127 @@ reasonable prices and excellent customer service.
 
 function selectProduct(name,price){
 
-document.getElementById("product").value=name;
+    document.getElementById("product").value=name;
 
-calculateTotal();
+    calculateTotal();
 
-document.getElementById("order").scrollIntoView({
-behavior:"smooth"
-});
+    document.getElementById("order")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
 
 function calculateTotal(){
 
-let product=document.getElementById("product");
+    let product=
+    document.getElementById("product");
 
-let price=Number(
-product.options[product.selectedIndex]
-.getAttribute("data-price")
-);
+    let price=Number(
+        product.options[
+            product.selectedIndex
+        ].getAttribute("data-price")
+    );
 
-let quantity=Number(
-document.getElementById("quantity").value
-);
+    let quantity=Number(
+        document.getElementById("quantity").value
+    );
 
-let delivery=Number(
-document.getElementById("delivery").value
-);
+    let delivery=Number(
+        document.getElementById("delivery").value
+    );
 
-let productTotal=price*quantity;
+    let productTotal=price*quantity;
 
-let total=productTotal+delivery;
+    let total=productTotal+delivery;
 
-document.getElementById("showProduct").innerText=
-product.value;
+    document.getElementById("showProduct")
+    .innerText=product.value;
 
-document.getElementById("productPrice").innerText=
-productTotal;
+    document.getElementById("productPrice")
+    .innerText=productTotal;
 
-document.getElementById("deliveryPrice").innerText=
-delivery;
+    document.getElementById("deliveryPrice")
+    .innerText=delivery;
 
-document.getElementById("total").innerText=
-total;
+    document.getElementById("total")
+    .innerText=total;
 
 }
 
 
 function sendOrder(){
 
-let product=document.getElementById("product").value;
+    let product=
+    document.getElementById("product").value;
 
-let productSelect=document.getElementById("product");
+    let productSelect=
+    document.getElementById("product");
 
-let price=Number(
-productSelect.options[
-productSelect.selectedIndex
-].getAttribute("data-price")
-);
+    let price=Number(
+        productSelect.options[
+            productSelect.selectedIndex
+        ].getAttribute("data-price")
+    );
 
-let size=document.getElementById("size").value;
+    let size=
+    document.getElementById("size").value;
 
-let color=document.getElementById("color").value;
+    let color=
+    document.getElementById("color").value;
 
-let quantity=Number(
-document.getElementById("quantity").value
-);
+    let quantity=Number(
+    document.getElementById("quantity").value
+    );
 
-let name=document.getElementById("name").value.trim();
+    let name=
+    document.getElementById("name")
+    .value.trim();
 
-let phone=document.getElementById("phone").value.trim();
+    let phone=
+    document.getElementById("phone")
+    .value.trim();
 
-let address=document.getElementById("address").value.trim();
+    let address=
+    document.getElementById("address")
+    .value.trim();
 
-let deliverySelect=document.getElementById("delivery");
+    let deliverySelect=
+    document.getElementById("delivery");
 
-let deliveryCharge=Number(
-deliverySelect.value
-);
+    let deliveryCharge=
+    Number(deliverySelect.value);
 
-let deliveryArea=
-deliverySelect.options[
-deliverySelect.selectedIndex
-].text;
+    let deliveryArea=
+    deliverySelect.options[
+        deliverySelect.selectedIndex
+    ].text;
 
-let payment=
-document.getElementById("payment").value;
+    let payment=
+    document.getElementById("payment")
+    .value;
 
-if(name===""){
-alert("Please enter your name.");
-return;
-}
+    if(name===""){
+        alert("Please enter your name.");
+        return;
+    }
 
-if(phone===""){
-alert("Please enter your phone number.");
-return;
-}
+    if(phone===""){
+        alert("Please enter your phone number.");
+        return;
+    }
 
-if(address===""){
-alert("Please enter your delivery address.");
-return;
-}
+    if(address===""){
+        alert("Please enter your delivery address.");
+        return;
+    }
 
-let productTotal=price*quantity;
+    let productTotal=price*quantity;
 
-let total=productTotal+deliveryCharge;
+    let total=productTotal+deliveryCharge;
 
-let message=
+    let message=
 `Hello Ahad Shop,
 
 I want to place an order.
@@ -650,13 +851,13 @@ ${address}
 
 Please confirm my order. Thank you.`;
 
-let whatsappNumber="8801624694415";
+    let whatsappNumber="8801624694415";
 
-let url=
-"https://wa.me/"+whatsappNumber+
-"?text="+encodeURIComponent(message);
+    let url=
+    "https://wa.me/"+whatsappNumber+
+    "?text="+encodeURIComponent(message);
 
-window.open(url,"_blank");
+    window.open(url,"_blank");
 
 }
 
