@@ -12,9 +12,7 @@
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     font-family: Arial, sans-serif;
@@ -37,6 +35,15 @@ header {
 .logo {
     font-size: 25px;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
 }
 
 nav a {
@@ -46,46 +53,118 @@ nav a {
     font-size: 16px;
 }
 
-nav a:hover {
-    color: #38d9a9;
-}
+nav a:hover { color: #38d9a9; }
 
-/* HERO */
-.hero {
-    min-height: 330px;
-    background: linear-gradient(135deg, #064cff, #2176ff);
-    color: white;
+/* AHAD SHOP POSTER / BANNER */
+.ahad-poster {
+    width: 100%;
+    min-height: 360px;
+    margin: 30px 0;
+    padding: 20px 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
-    padding: 50px 20px;
+    background: linear-gradient(135deg, #071b3a, #075985, #0ea5e9);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.20);
 }
 
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+.ahad-poster::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    background: rgba(255,255,255,0.10);
+    border-radius: 50%;
+    top: -100px;
+    right: -80px;
 }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 25px;
+.ahad-poster::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    bottom: -80px;
+    left: -50px;
 }
 
-.shop-btn {
+.side-logo {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    z-index: 3;
+}
+
+.side-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.poster-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 35px 20px;
+    max-width: 700px;
+    flex: 1;
+    margin: auto;
+}
+
+.poster-badge {
+    display: inline-block;
+    padding: 7px 18px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 30px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.poster-content h1 {
+    font-size: 55px;
+    margin: 5px 0;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.poster-subtitle {
+    font-size: 19px;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.poster-text {
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 18px auto 25px;
+    max-width: 560px;
+}
+
+.poster-btn {
     display: inline-block;
     background: white;
-    color: #1755e8;
+    color: #075985;
+    text-decoration: none;
     padding: 13px 30px;
     border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.poster-btn:hover {
+    transform: translateY(-3px);
+    background: #f1f5f9;
 }
 
 /* PRODUCTS */
-section {
-    padding: 55px 6%;
-}
+section { padding: 55px 6%; }
 
 .section-title {
     text-align: center;
@@ -109,9 +188,7 @@ section {
     padding-bottom: 20px;
 }
 
-.product:hover {
-    transform: translateY(-8px);
-}
+.product:hover { transform: translateY(-8px); }
 
 .product-img {
     width: 100%;
@@ -152,14 +229,10 @@ section {
     font-size: 15px;
 }
 
-.buy-btn:hover {
-    background: #0b3fb5;
-}
+.buy-btn:hover { background: #0b3fb5; }
 
 /* ORDER */
-.order-section {
-    background: #eeeaff;
-}
+.order-section { background: #eeeaff; }
 
 .order-box {
     max-width: 800px;
@@ -177,9 +250,7 @@ label {
     font-weight: bold;
 }
 
-input,
-select,
-textarea {
+input, select, textarea {
     width: 100%;
     padding: 14px;
     border: 1px solid #ccc;
@@ -199,9 +270,7 @@ textarea {
     border-radius: 10px;
 }
 
-.total-box p {
-    margin: 8px 0;
-}
+.total-box p { margin: 8px 0; }
 
 .total {
     color: #d7263d;
@@ -222,9 +291,7 @@ textarea {
     cursor: pointer;
 }
 
-.whatsapp-btn:hover {
-    background: #0ca957;
-}
+.whatsapp-btn:hover { background: #0ca957; }
 
 /* ABOUT */
 .about {
@@ -241,9 +308,7 @@ textarea {
     color: white;
 }
 
-.contact p {
-    margin: 10px 0;
-}
+.contact p { margin: 10px 0; }
 
 /* FOOTER */
 footer {
@@ -255,9 +320,7 @@ footer {
 
 /* MOBILE */
 @media(max-width: 900px) {
-    .products {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .products { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media(max-width: 600px) {
@@ -271,16 +334,43 @@ footer {
         font-size: 14px;
     }
 
-    .hero h1 {
-        font-size: 30px;
+    .side-logo {
+        width: 55px;
+        height: 55px;
     }
 
-    .products {
-        grid-template-columns: 1fr;
+    .ahad-poster {
+        min-height: 320px;
+        padding: 15px 8px;
     }
 
-    section {
-        padding: 40px 5%;
+    .poster-content { padding: 25px 5px; }
+
+    .poster-content h1 { font-size: 30px; }
+
+    .poster-subtitle { font-size: 14px; }
+
+    .poster-text { font-size: 13px; }
+
+    .poster-btn { padding: 10px 20px; }
+
+    .products { grid-template-columns: 1fr; }
+
+    section { padding: 40px 5%; }
+}
+
+.main-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 560px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+@media (max-width: 600px) {
+    .main-banner {
+        max-height: none;
+        border-radius: 14px;
     }
 }
 </style>
@@ -290,505 +380,4 @@ footer {
 
 <!-- HEADER -->
 <header>
-    <div class="logo">Ahad Shop</div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#order">Order</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-
-    
-
-
-<!-- PRODUCTS --><!-- AHAD SHOP POSTER -->
-<!-- AHAD SHOP POSTER -->
-
-<section class="ahad-poster">
-  <div class="poster-content">
-    <div class="poster-badge">WELCOME TO</div>
-
-    <h1>AHAD SHOP</h1>
-
-    <p class="poster-subtitle">
-      Fashion • Clothing • Lifestyle • All Products
-    </p>
-
-    <p class="poster-text">
-      আপনার পছন্দের পণ্য এখন এক জায়গায়।
-      সুন্দর পণ্য, সহজ অর্ডার, দ্রুত ডেলিভারি।
-    </p>
-
-    <a href="#products" class="poster-btn">SHOP NOW</a>
-  </div>
-</section>
-
-<style>
-.ahad-poster {
-  width: 100%;
-  min-height: 360px;
-  margin: 30px 0;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  background:
-    linear-gradient(135deg, #071b3a, #075985, #0ea5e9);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.20);
-}
-
-.ahad-poster::before {
-  content: "";
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  background: rgba(255,255,255,0.10);
-  border-radius: 50%;
-  top: -100px;
-  right: -80px;
-}
-
-.ahad-poster::after {
-  content: "";
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 50%;
-  bottom: -80px;
-  left: -50px;
-}
-
-.poster-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  padding: 35px 20px;
-  max-width: 700px;
-}
-
-.poster-badge {
-  display: inline-block;
-  padding: 7px 18px;
-  border: 1px solid rgba(255,255,255,0.5);
-  border-radius: 30px;
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-}
-
-.poster-content h1 {
-  font-size: 55px;
-  margin: 5px 0;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.poster-subtitle {
-  font-size: 19px;
-  margin: 10px 0;
-  font-weight: 600;
-}
-
-.poster-text {
-  font-size: 16px;
-  line-height: 1.7;
-  margin: 18px auto 25px;
-  max-width: 560px;
-}
-
-.poster-btn {
-  display: inline-block;
-  background: white;
-  color: #075985;
-  text-decoration: none;
-  padding: 13px 30px;
-  border-radius: 30px;
-  font-weight: 700;
-  transition: 0.3s;
-}
-
-.poster-btn:hover {
-  transform: translateY(-3px);
-  background: #f1f5f9;
-}
-
-@media (max-width: 600px) {
-  .ahad-poster {
-    min-height: 320px;
-  }
-
-  .poster-content h1 {
-    font-size: 38px;
-  }
-
-  .poster-subtitle {
-    font-size: 16px;
-  }
-
-  .poster-text {
-    font-size: 14px;
-  }
-}
-</style>
-<section id="products">
-    <h2 class="section-title">Our Products</h2>
-
-    <div class="products">
-
-        <div class="product">
-            <div class="product-img">
-                Men T-Shirt Image
-            </div>
-
-            <h3>Men T-Shirt</h3>
-            <div class="price">৳350</div>
-
-            <button class="buy-btn"
-                onclick="selectProduct('Men T-Shirt',350)">
-                Buy Now
-            </button>
-        </div>
-
-
-        <div class="product">
-            <div class="product-img">
-                Women's Dress Image
-            </div>
-
-            <h3>Women's Dress</h3>
-            <div class="price">৳750</div>
-
-            <button class="buy-btn"
-                onclick="selectProduct('Women’s Dress',750)">
-                Buy Now
-            </button>
-        </div>
-
-
-        <div class="product">
-            <div class="product-img">
-                Kids Collection Image
-            </div>
-
-            <h3>Kids Collection</h3>
-            <div class="price">৳850</div>
-
-            <button class="buy-btn"
-                onclick="selectProduct('Kids Collection',850)">
-                Buy Now
-            </button>
-        </div>
-
-
-        <div class="product">
-            <div class="product-img">
-                Premium Shirt Image
-            </div>
-
-            <h3>Premium Shirt</h3>
-            <div class="price">৳750</div>
-
-            <button class="buy-btn"
-                onclick="selectProduct('Premium Shirt',750)">
-                Buy Now
-            </button>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- ORDER -->
-<section class="order-section" id="order">
-
-    <h2 class="section-title">Place Your Order</h2>
-
-    <div class="order-box">
-
-        <label>Select Product</label>
-
-        <select id="product" onchange="calculateTotal()">
-            <option value="Men T-Shirt|350">Men T-Shirt - ৳350</option>
-            <option value="Women's Dress|1200">Women's Dress - ৳750</option>
-            <option value="Kids Collection|850">Kids Collection - ৳850</option>
-            <option value="Premium Shirt|990">Premium Shirt - ৳750</option>
-        </select>
-
-
-        <label>Size</label>
-
-        <select id="size">
-            <option>Small (S)</option>
-            <option>Medium (M)</option>
-            <option>Large (L)</option>
-            <option>Extra Large (XL)</option>
-            <option>XXL</option>
-        </select>
-
-
-        <label>Quantity</label>
-
-        <input type="number" id="quantity"
-               value="1" min="1"
-               onchange="calculateTotal()">
-
-
-        <label>Customer Name</label>
-
-        <input type="text"
-               id="customerName"
-               placeholder="Enter your name">
-
-
-        <label>Mobile Number</label>
-
-        <input type="tel"
-               id="customerPhone"
-               placeholder="Enter your mobile number">
-
-
-        <label>Delivery Address</label>
-
-        <textarea id="address"
-                  placeholder="Enter your complete delivery address"></textarea>
-
-
-        <label>Delivery Area</label>
-
-        <select id="area" onchange="calculateTotal()">
-            <option value="80">Inside Sylhet - ৳80</option>
-            <option value="120">Outside Sylhet - ৳120</option>
-            <option value="150">Other District - ৳150</option>
-        </select>
-
-
-        <!-- PAYMENT METHOD -->
-        <label>Payment Method</label>
-
-        <select id="payment">
-            <option value="Cash on Delivery">Cash on Delivery</option>
-            <option value="bKash">bKash</option>
-            <option value="Nagad">Nagad</option>
-        </select>
-
-
-        <div class="total-box">
-
-            <p>
-                Product Price:
-                <strong id="productPrice">৳650</strong>
-            </p>
-
-            <p>
-                Delivery Charge:
-                <strong id="deliveryCharge">৳80</strong>
-            </p>
-
-            <p class="total">
-                Total:
-                <span id="totalPrice">৳730</span>
-            </p>
-
-        </div>
-
-
-        <button class="whatsapp-btn"
-                onclick="orderWhatsApp()">
-            Order on WhatsApp
-        </button>
-
-    </div>
-</section>
-
-
-<!-- ABOUT -->
-<section id="about">
-
-    <h2 class="section-title">About Ahad Shop</h2>
-
-    <div class="about">
-        <p>
-            Welcome to Ahad Shop. We provide quality clothing
-            and different products at affordable prices.
-            Customers can order products easily through WhatsApp.
-        </p>
-    </div>
-
-</section>
-
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-
-    <h2 class="section-title">Contact Us</h2>
-
-    <p>Ahad Shop</p>
-    <p>Golapganj, Sylhet, Bangladesh</p>
-    <p>WhatsApp: 01624694415</p>
-
-</section>
-
-
-<footer>
-    © 2026 Ahad Shop. All Rights Reserved.
-</footer>
-
-
-<script>
-
-/* WHATSAPP NUMBER
-   পরে চাইলে এখান থেকে পরিবর্তন করবেন।
-*/
-const whatsappNumber = "8801624694415";
-
-
-/* SELECT PRODUCT */
-function selectProduct(name, price) {
-
-    const productSelect = document.getElementById("product");
-
-    for (let i = 0; i < productSelect.options.length; i++) {
-
-        if (productSelect.options[i].value.startsWith(name)) {
-
-            productSelect.selectedIndex = i;
-            break;
-        }
-    }
-
-    calculateTotal();
-
-    document.getElementById("order").scrollIntoView({
-        behavior: "smooth"
-    });
-}
-
-
-/* CALCULATE TOTAL */
-function calculateTotal() {
-
-    const productValue =
-        document.getElementById("product").value.split("|");
-
-    const price = Number(productValue[1]);
-
-    const quantity =
-        Number(document.getElementById("quantity").value);
-
-    const delivery =
-        Number(document.getElementById("area").value);
-
-    const productTotal = price * quantity;
-
-    const total = productTotal + delivery;
-
-    document.getElementById("productPrice").innerText =
-        "৳" + productTotal;
-
-    document.getElementById("deliveryCharge").innerText =
-        "৳" + delivery;
-
-    document.getElementById("totalPrice").innerText =
-        "৳" + total;
-}
-
-
-/* WHATSAPP ORDER */
-function orderWhatsApp() {
-
-    const productValue =
-        document.getElementById("product").value.split("|");
-
-    const productName = productValue[0];
-    const price = Number(productValue[1]);
-
-    const quantity =
-        Number(document.getElementById("quantity").value);
-
-    const size =
-        document.getElementById("size").value;
-
-    const name =
-        document.getElementById("customerName").value;
-
-    const phone =
-        document.getElementById("customerPhone").value;
-
-    const address =
-        document.getElementById("address").value;
-
-    const areaSelect =
-        document.getElementById("area");
-
-    const area =
-        areaSelect.options[areaSelect.selectedIndex].text;
-
-    const delivery =
-        Number(areaSelect.value);
-
-    const payment =
-        document.getElementById("payment").value;
-
-    const total =
-        (price * quantity) + delivery;
-
-
-    if (!name || !phone || !address) {
-
-        alert("Please enter your Name, Mobile Number and Delivery Address.");
-
-        return;
-    }
-
-
-    const message =
-`Hello Ahad Shop,
-
-I want to place an order.
-
-Customer Name: ${name}
-Mobile Number: ${phone}
-
-Product: ${productName}
-Size: ${size}
-Quantity: ${quantity}
-
-Delivery Area: ${area}
-Delivery Address: ${address}
-
-Payment Method: ${payment}
-
-Product Price: ৳${price * quantity}
-Delivery Charge: ৳${delivery}
-Total: ৳${total}
-
-Thank you.`;
-
-
-    const whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(message);
-
-
-    window.open(whatsappURL, "_blank");
-}
-
-
-/* INITIAL TOTAL */
-calculateTotal();
-
-</script>
-
-</body>
-</html>
+    <div class="logo">
